@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<knowledge>
+	<title>The law of obligations</title>
+	<description>This is an example.</description>
+
+	<goal name="must-repair-damage">
+		<description>Does the person have to repair the damages?</description>
+		<answer value="yes"><![CDATA[The person <em>must</em> repair the damages.]]></answer>
+		<answer>The person does not have to repair the damages.</answer>
+	</goal>
+
+	<rule>
+		<description>6:162-1</description>
+		<if>
+			<and>
+				<fact name="person-commits-tortious-act-against-other-person">yes</fact>
+				<fact name="tortious-act">yes</fact>
+				<fact name="act-attributed-to-him">yes</fact>
+			</and>
+		</if>
+		<then>
+			<fact name="must-repair-damage">yes</fact>
+		</then>
+	</rule>
+
+	<rule>
+		<description>6:162-2</description>
+		<if>
+			<and>
+				<fact name="no-justification-for-behaviour">yes</fact>
+				<fact name="violation-someone-elses-right">yes</fact>
+				<or>
+					<fact name="act-in-violation-written-law">yes</fact>
+					<fact name="act-in-violation-unwritten-law">yes</fact>
+					<fact name="omission-in-violation-written-law">yes</fact>
+					<fact name="omission-in-violation-unwritten-law">yes</fact>	
+				</or>
+			</and>
+		</if>
+		<then>
+			<fact name="tortious-act">yes</fact>
+		</then>
+	</rule>
+
+	<rule>
+		<description>6:162-3</description>
+		<if>
+			<or>
+				<fact name="results-from-his-fault">yes</fact>
+				<fact name="accountable-virtue-of-law">yes</fact>
+				<fact name="accountable-generally-accepted-principles">yes</fact>
+			</or>
+		</if>
+		<then>
+			<fact name="act-attributed-to-him">yes</fact>
+		</then>
+	</rule>
+
+	<rule>
+		<description>6:163</description>
+		<if>
+
+		</if>
+		<then>
+			<fact name="act-attributed-to-him">yes</fact>
+		</then>
+	</rule>
+
+	<question>
+		<description>Is the person named John</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="person-named-john">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="person-named-john">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Has the person done his dishes today</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="done-his-dishes">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="done-his-dishes">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Has the person cleaned his room today</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="cleaned-his-room">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="cleaned-his-room">no</fact>
+			</then>
+		</option>
+	</question>
+
+</knowledge>
