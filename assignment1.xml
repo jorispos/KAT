@@ -225,23 +225,35 @@
 			<description>Act in violation of a duty imposed by written law</description>
 			<then>
 				<fact name="act-in-violation-written-law">yes</fact>
+				<fact name="act-in-violation-unwritten-law">no</fact>
+				<fact name="omission-in-violation-written-law">no</fact>
+				<fact name="omission-in-violation-unwritten-law">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Act in violation of a duty imposed by unwritten law</description>
 			<then>
+				<fact name="act-in-violation-written-law">no</fact>
 				<fact name="act-in-violation-unwritten-law">yes</fact>
+				<fact name="omission-in-violation-written-law">no</fact>
+				<fact name="omission-in-violation-unwritten-law">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Omission in violation of a duty imposed by written law</description>
 			<then>
+				<fact name="act-in-violation-written-law">no</fact>
+				<fact name="act-in-violation-unwritten-law">no</fact>
 				<fact name="omission-in-violation-written-law">yes</fact>
+				<fact name="omission-in-violation-unwritten-law">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Omission in violation of a duty imposed by unwritten law</description>
 			<then>
+				<fact name="act-in-violation-written-law">no</fact>
+				<fact name="act-in-violation-unwritten-law">no</fact>
+				<fact name="omission-in-violation-written-law">no</fact>
 				<fact name="omission-in-violation-unwritten-law">yes</fact>
 			</then>
 		</option>
