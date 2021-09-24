@@ -44,24 +44,6 @@
 	</rule>
 
 	<rule>
-		<description>6:162-3</description>
-		<if>
-			<and>
-				<fact name="tortious-act">yes</fact>
-				<or>
-					<fact name="results-from-his-fault">yes</fact>
-					<fact name="accountable-virtue-of-law">yes</fact>
-					<fact name="act-attributed-to-him">yes</fact>
-					<fact name="accountable-generally-accepted-principles">yes</fact>
-				</or>
-			</and>
-		</if>
-		<then>
-			<fact name="act-attributed-to-him">yes</fact>
-		</then>
-	</rule>
-
-	<rule>
 		<description>6:163</description>
 		<if>
 			<and>
@@ -89,11 +71,17 @@
 	</rule>
 
 	<rule>
-		<description>6:165-1</description>
+		<description>6:165-1 and 6:162-3</description>
 		<if>
 			<and>
 				<fact name="tortious-act">yes</fact>
 				<fact name="younger-than-14">no</fact>
+				<or>
+					<fact name="results-from-his-fault">yes</fact>
+					<fact name="accountable-virtue-of-law">yes</fact>
+					<fact name="act-attributed-to-him">yes</fact>
+					<fact name="accountable-generally-accepted-principles">yes</fact>
+				</or>
 				<or>
 					<fact name="under-influence-mental-disability">yes</fact>
 					<fact name="under-influence-physical-disability">yes</fact>
