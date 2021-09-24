@@ -53,7 +53,7 @@
 			</and>
 		</if>
 		<then>
-			<fact name="must-repair-damage">no</fact>
+			<fact name="must-repair-damage">yes</fact>
 		</then>
 	</rule>
 
