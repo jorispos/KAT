@@ -78,7 +78,10 @@
 	<rule>
 		<description>6:164</description>
 		<if>
-			<fact name="younger-than-14">yes</fact>
+			<and>
+				<fact name="tortious-act">yes</fact>
+				<fact name="younger-than-14">yes</fact>
+			</and>
 		</if>
 		<then>
 			<fact name="act-attributed-to-him">no</fact>
