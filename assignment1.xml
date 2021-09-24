@@ -67,7 +67,7 @@
 			<and>
 				<fact name="tortious-act">yes</fact>
 				<fact name="damage-suffered">yes</fact>
-				<fact name="violated-standard-behaviour-no-intent-offer-protection">yes</fact>
+				<fact name="violated-standard-behaviour-intent-offer-protection">no</fact>
 			</and>
 		</if>
 		<then>
@@ -316,13 +316,13 @@
 		<option>
 			<description>Yes</description>
 			<then>
-				<fact name="violated-standard-behaviour-no-intent-offer-protection">yes</fact>
+				<fact name="violated-standard-behaviour-intent-offer-protection">yes</fact>
 			</then>
 		</option>
 		<option>
 			<description>No</description>
 			<then>
-				<fact name="violated-standard-behaviour-no-intent-offer-protection">no</fact>
+				<fact name="violated-standard-behaviour-intent-offer-protection">no</fact>
 			</then>
 		</option>
 	</question>
