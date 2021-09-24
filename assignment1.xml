@@ -10,13 +10,12 @@
 	</goal>
 
 	<rule>
-		<description>6:162-1</description>
+		<description>Repair damages</description>
 		<if>
 			<and>
-				<fact name="damage-suffered">yes</fact>
 				<fact name="tortious-act">yes</fact>
 				<fact name="act-attributed-to-him">yes</fact>
-				<fact name="person-commits-act-against-other-person">yes</fact>
+				<fact name="violated-standard-behaviour-intent-offer-protection">yes</fact>
 			</and>
 		</if>
 		<then>
@@ -25,7 +24,7 @@
 	</rule>
 
 	<rule>
-		<description>6:162-2</description>
+		<description>Tortious act</description>
 		<if>
 			<and>
 				<fact name="no-justification-for-behaviour">yes</fact>
@@ -44,36 +43,7 @@
 	</rule>
 
 	<rule>
-		<description>6:163</description>
-		<if>
-			<and>
-				<fact name="tortious-act">yes</fact>
-				<fact name="damage-suffered">yes</fact>
-				<fact name="act-attributed-to-him">yes</fact>
-				<fact name="person-commits-act-against-other-person">yes</fact>
-				<fact name="violated-standard-behaviour-intent-offer-protection">no</fact>
-			</and>
-		</if>
-		<then>
-			<fact name="must-repair-damage">no</fact>
-		</then>
-	</rule>
-
-	<rule>
-		<description>6:164</description>
-		<if>
-			<and>
-				<fact name="tortious-act">yes</fact>
-				<fact name="younger-than-14">yes</fact>
-			</and>
-		</if>
-		<then>
-			<fact name="act-attributed-to-him">no</fact>
-		</then>
-	</rule>
-
-	<rule>
-		<description>6:165-1 and 6:162-3</description>
+		<description>Attribute to him</description>
 		<if>
 			<and>
 				<fact name="tortious-act">yes</fact>
@@ -81,12 +51,7 @@
 				<or>
 					<fact name="results-from-his-fault">yes</fact>
 					<fact name="accountable-virtue-of-law">yes</fact>
-					<fact name="act-attributed-to-him">yes</fact>
 					<fact name="accountable-generally-accepted-principles">yes</fact>
-				</or>
-				<or>
-					<fact name="under-influence-mental-disability">yes</fact>
-					<fact name="under-influence-physical-disability">yes</fact>
 				</or>
 			</and>
 		</if>
@@ -178,7 +143,6 @@
 			<description>Yes</description>
 			<then>
 				<fact name="violation-someone-elses-right">yes</fact>
-				<fact name="person-commits-act-against-other-person">yes</fact>
 			</then>
 		</option>
 		<option>
@@ -266,38 +230,6 @@
 				<fact name="act-in-violation-unwritten-law">no</fact>
 				<fact name="omission-in-violation-written-law">no</fact>
 				<fact name="omission-in-violation-unwritten-law">no</fact>
-			</then>
-		</option>
-	</question>
-
-	<question>
-		<description>Did the person commit an act against another person?</description>
-		<option>
-			<description>Yes</description>
-			<then>
-				<fact name="person-commits-act-against-other-person">yes</fact>
-			</then>
-		</option>
-		<option>
-			<description>No</description>
-			<then>
-				<fact name="person-commits-act-against-other-person">no</fact>
-			</then>
-		</option>
-	</question>
-
-	<question>
-		<description>Did the other person suffer damage as a result of the act?</description>
-		<option>
-			<description>Yes</description>
-			<then>
-				<fact name="damage-suffered">yes</fact>
-			</then>
-		</option>
-		<option>
-			<description>No</description>
-			<then>
-				<fact name="damage-suffered">no</fact>
 			</then>
 		</option>
 	</question>
