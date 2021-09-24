@@ -124,11 +124,13 @@
 			<description>Physical disability</description>
 			<then>
 				<fact name="under-influence-physical-disability">yes</fact>
+				<fact name="under-influence-mental-disability">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Mental disability</description>
 			<then>
+				<fact name="under-influence-physical-disability">no</fact>
 				<fact name="under-influence-mental-disability">yes</fact>
 			</then>
 		</option>
@@ -147,17 +149,23 @@
 			<description>Resulted from the tortfeasor's fault</description>
 			<then>
 				<fact name="results-from-his-fault">yes</fact>
+				<fact name="accountable-virtue-of-law">no</fact>
+				<fact name="accountable-generally-accepted-principles">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Resulted from cause for which tortfeasor is accountable by virtue of law</description>
 			<then>
+				<fact name="results-from-his-fault">no</fact>
 				<fact name="accountable-virtue-of-law">yes</fact>
+				<fact name="accountable-generally-accepted-principles">no</fact>
 			</then>
 		</option>
 		<option>
 			<description>Resulted from cause for which tortfeasor is accountable by generally accepted principles</description>
 			<then>
+				<fact name="results-from-his-fault">no</fact>
+				<fact name="accountable-virtue-of-law">no</fact>
 				<fact name="accountable-generally-accepted-principles">yes</fact>
 			</then>
 		</option>
