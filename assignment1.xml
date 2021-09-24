@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <knowledge>
 	<title>The law of obligations</title>
-	<description>This is an example.</description>
+	<description>by Joris Postmus and Pjotr Straathof</description>
 
 	<goal name="must-repair-damage">
 		<description>Does the person have to repair the damages?</description>
