@@ -13,9 +13,10 @@
 		<description>6:162-1</description>
 		<if>
 			<and>
-				<fact name="person-commits-tortious-act-against-other-person">yes</fact>
+				<fact name="damage-suffered">yes</fact>
 				<fact name="tortious-act">yes</fact>
 				<fact name="act-attributed-to-him">yes</fact>
+				<fact name="person-commits-act-against-other-person">yes</fact>
 			</and>
 		</if>
 		<then>
@@ -45,11 +46,14 @@
 	<rule>
 		<description>6:162-3</description>
 		<if>
-			<or>
-				<fact name="results-from-his-fault">yes</fact>
-				<fact name="accountable-virtue-of-law">yes</fact>
-				<fact name="accountable-generally-accepted-principles">yes</fact>
-			</or>
+			<and>
+				<fact name="tortious-act">yes</fact>
+				<or>
+					<fact name="results-from-his-fault">yes</fact>
+					<fact name="accountable-virtue-of-law">yes</fact>
+					<fact name="accountable-generally-accepted-principles">yes</fact>
+				</or>
+			</and>
 		</if>
 		<then>
 			<fact name="act-attributed-to-him">yes</fact>
@@ -96,63 +100,188 @@
 		</then>
 	</rule>
 
-	<rule>
-		<description>6:165-2</description>
-		<if>
-			<and>
-				<fact name="third-person-liable-towards-injured-person-negligent-supervision">yes</fact>
-			</and>
-			
-		</if>
-		<then>
-			<fact name="must-repair-damage">no</fact>
-		</then>
-	</rule>
-
 	<question>
-		<description>Is the person named John</description>
+		<description>Is the person younger than 14?</description>
 		<option>
 			<description>Yes</description>
 			<then>
-				<fact name="person-named-john">yes</fact>
+				<fact name="younger-than-14">yes</fact>
 			</then>
 		</option>
 		<option>
 			<description>No</description>
 			<then>
-				<fact name="person-named-john">no</fact>
+				<fact name="younger-than-14">no</fact>
 			</then>
 		</option>
 	</question>
 
 	<question>
-		<description>Has the person done his dishes today</description>
+		<description>Did the person act under influence of any of the following?</description>
 		<option>
-			<description>Yes</description>
+			<description>Physical disability</description>
 			<then>
-				<fact name="done-his-dishes">yes</fact>
+				<fact name="under-influence-physical-disability">yes</fact>
 			</then>
 		</option>
 		<option>
-			<description>No</description>
+			<description>Mental disability</description>
 			<then>
-				<fact name="done-his-dishes">no</fact>
+				<fact name="under-influence-mental-disability">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>None of the above</description>
+			<then>
+				<fact name="under-influence-mental-disability">no</fact>
+				<fact name="under-influence-physical-disability">no</fact>
 			</then>
 		</option>
 	</question>
 
 	<question>
-		<description>Has the person cleaned his room today</description>
+		<description>Did the tortious act result from any of the following options?</description>
+		<option>
+			<description>Resulted from the tortfeasor's fault</description>
+			<then>
+				<fact name="results-from-his-fault">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>Resulted from cause for which tortfeasor is accountable by virtue of law</description>
+			<then>
+				<fact name="accountable-virtue-of-law">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>Resulted from cause for which tortfeasor is accountable by generally accepted principles</description>
+			<then>
+				<fact name="accountable-generally-accepted-principles">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>None of the above</description>
+			<then>
+				<fact name="results-from-his-fault">no</fact>
+				<fact name="accountable-virtue-of-law">no</fact>
+				<fact name="accountable-generally-accepted-principles">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Was the act a violation of someone else's right?</description>
 		<option>
 			<description>Yes</description>
 			<then>
-				<fact name="cleaned-his-room">yes</fact>
+				<fact name="violation-someone-elses-right">yes</fact>
 			</then>
 		</option>
 		<option>
 			<description>No</description>
 			<then>
-				<fact name="cleaned-his-room">no</fact>
+				<fact name="violation-someone-elses-right">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Is there a justification for the person's behaviour?</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="no-justification-for-behaviour">no</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="no-justification-for-behaviour">yes</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Is there justification for the person's behaviour?</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="no-justification-for-behaviour">no</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="no-justification-for-behaviour">yes</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Is the act considered any of the following?</description>
+		<option>
+			<description>Act in violation of a duty imposed by written law</description>
+			<then>
+				<fact name="act-in-violation-written-law">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>Act in violation of a duty imposed by unwritten law</description>
+			<then>
+				<fact name="act-in-violation-unwritten-law">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>Omission in violation of a duty imposed by written law</description>
+			<then>
+				<fact name="omission-in-violation-written-law">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>Omission in violation of a duty imposed by unwritten law</description>
+			<then>
+				<fact name="omission-in-violation-unwritten-law">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>None of the above</description>
+			<then>
+				<fact name="act-in-violation-written-law">no</fact>
+				<fact name="act-in-violation-unwritten-law">no</fact>
+				<fact name="omission-in-violation-written-law">no</fact>
+				<fact name="omission-in-violation-unwritten-law">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Did the person commit an act against another person?</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="person-commits-act-against-other-person">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="person-commits-act-against-other-person">no</fact>
+			</then>
+		</option>
+	</question>
+
+	<question>
+		<description>Did the other person suffer damage as a result of the act?</description>
+		<option>
+			<description>Yes</description>
+			<then>
+				<fact name="damage-suffered">yes</fact>
+			</then>
+		</option>
+		<option>
+			<description>No</description>
+			<then>
+				<fact name="damage-suffered">no</fact>
 			</then>
 		</option>
 	</question>
