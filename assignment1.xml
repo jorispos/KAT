@@ -188,6 +188,7 @@
 			<description>Yes</description>
 			<then>
 				<fact name="violation-someone-elses-right">yes</fact>
+				<fact name="person-commits-act-against-other-person">yes</fact>
 			</then>
 		</option>
 		<option>
